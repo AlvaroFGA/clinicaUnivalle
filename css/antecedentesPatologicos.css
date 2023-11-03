@@ -1,0 +1,12 @@
+.input-container {
+    display: flex;
+}
+
+.input-container div {
+    margin-right: 10px; /* Espacio entre los elementos (ajusta según tus necesidades) */
+}
+
+/* Opcional: Estilos para las etiquetas de radio */
+.input-container label {
+    margin-right: 5px; /* Espacio entre la etiqueta y el radio */
+}
