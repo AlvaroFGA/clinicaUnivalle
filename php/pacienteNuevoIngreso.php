@@ -1,5 +1,6 @@
 <?php
 session_start();
+//aqui reeemplazas el 7 por un usuario que exista en tu base de datos
 $_SESSION['usuario'] = '7';
 
 include '../modelo/conexion.php';
