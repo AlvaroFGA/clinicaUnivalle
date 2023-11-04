@@ -28,7 +28,7 @@
     <h2>Lista de Usuarios</h2>
     <button class='submit' ><a href='registrPersona.html'>Crear</a></button>
     <span></span>
-    <button class='submit' ><a href='index.html'>Volver</a></button>
+    <button class='submit' ><a href='../../index.html'>Volver</a></button>
     
     <table class = 'striped'>
         <thead>
