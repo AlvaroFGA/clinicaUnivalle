@@ -1,17 +1,18 @@
 <?php
 
-require_once '../modelo/database.php';
+require_once '../../modelo/database.php';
 
 class Sesion {
     public function verificacion($correo, $contrasenia) {
         $db = Database::getInstance();
         $connection = $db->getConnection();
-
-        $stmt = $connection->prepare("SELECT * FROM usuarios WHERE usuario = ? AND contrasena = ?");
-        $stmt->execute([$correo, $contrasenia]);
+        echo 'si';
+        $stmt = $connection->prepare("SELECT * FROM usuarios WHERE usuario = '$correo' AND contrasena = '$contrasenia';");
+        $stmt->execute();
         $usuario = $stmt->fetch();
 
         if ($usuario) {
+            echo 'si';
             session_start();
             $_SESSION['usuario_id'] = $usuario['id'];
             return true;
@@ -27,18 +28,19 @@ class Sesion {
     }
 }
 
-// Ejemplo de uso
-$loguearse = new Sesion();
+$logueo = new Sesion();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $contrasenia = $_POST['contrasenia'];
-
-    if ($loguearse->verificacion($correo, $contrasenia)) {
-        header("Location: home.php");
+    echo $correo;
+    echo $contrasenia;
+    if ($logueo->verificacion($correo, $contrasenia)) {
+        header("Location: ../../index.html");
+        exit();
     } else {
-        $error = "Credenciales inválidas";
-    }
+        header("Location: index.html");
+        exit();    }
 }
 
 
