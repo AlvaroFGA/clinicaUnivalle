@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/fontawesome-all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" href="../../css/styleBotones.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../css/styleTablas.css" type="text/css" media="all">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <title>Plan de Tratamientos</title>
 </head>
@@ -25,7 +28,7 @@
         <label for="exampleInputEmail1" class="form-label">Nuevo Tratamiento</label>
         <input name="nombre" type="text" class="form-control" id="" >
     </div>
-    <button type="submit" class="btn btn-dark">Insertar Tratamiento</button>
+    <button type="submit" class="btn " id="btn1">Insertar Tratamiento</button>
     </form>
   <?php
 include '../../modelo/conexion.php';
@@ -46,8 +49,8 @@ include '../../modelo/conexion.php';
   </div>
 
   <br>
-      <table class="table table-striped table-dark table_id ">
-                         <thead>    
+      <table class="table table-striped table_id ">
+                         <thead id="tablas">    
                          <tr>
                         <th>tratamiento</th>
                         </tr>
@@ -67,7 +70,7 @@ if($dato -> num_rows >0){
 
 
 <td>
-<a class="btn btn-warning" href="editar.php?id=<?php echo $fila['idtratamientos']?> ">Editar </a>
+<a class="btn " id="btn1" href="editar.php?id=<?php echo $fila['idtratamientos']?> ">Editar </a>
 
 </td>
 </tr>

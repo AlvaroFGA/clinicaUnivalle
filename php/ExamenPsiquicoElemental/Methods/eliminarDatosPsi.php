@@ -7,8 +7,8 @@
     if($stmt = $conexion -> prepare($delete)){
         $stmt -> bind_param('i',$id_psiquico);
         $stmt -> execute();
-    }
-    $stmt -> close();
-    header('Locaciont: ../../indexExamen.php');
+        $stmt -> close();
+    header("Location: ../../indexExamen.php");
     die();
+    }
 ?>

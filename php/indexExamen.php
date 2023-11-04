@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleTablas.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/styleBotones.css" type="text/css" media="all">
 </head>
 <body>
     <div class="container">
     <h1 class="text-center">Examen Psiquico Elemental</h1>
-    <a href="./ExamenPsiquicoElemental/views/ExamenPsiquicoElemental.php" class="center"><button class="btn btn-primary">Crear Examen</button></a>
-    <button><a>Busqueda Examen Psiquico</a>></button>
-    <table class="table table-striped table-secondary">
-    <thead>
+    <a href="./ExamenPsiquicoElemental/views/ExamenPsiquicoElemental.php" class="center" ><button class="btn" id="btn1">Crear Examen</button></a>
+    <span></span>
+    &nbsp;
+    <table class="table table-striped table-black" >
+    <thead id="tablas">
         <tr>
             <th scope="col">Nombre Paciente</th>
             <th scope="col">conciencia</th>
@@ -42,7 +45,7 @@
                 <th>$memoria</th>
                 <th>$alteracion</th>
                 <th>$fecha</th>
-                <th><a href='./ExamenPsiquicoElemental/views/ExamenPsi_Actualizar.php?id=$id'><button class='btn-primary btn'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosPsi.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
+                <th><a href='./ExamenPsiquicoElemental/views/ExamenPsi_Actualizar.php?id=$id'><button class='btn' id='btn1'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosPsi.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
                 </tr>");
             }
         ?>
@@ -54,8 +57,8 @@
     Examen Complementario de Tejidos Blancos
 </h3>
 <div class="container">
-    <table class="table table-striped table-black">
-    <thead>
+    <table class="table table-striped table-black" >
+    <thead id="tablas">
         <tr>
             <th scope="col">Nombre Paciente</th>
             <th scope="col">biopsia</th>
@@ -82,7 +85,7 @@
                 <th>$citologia</th>
                 <th>$otros</th>
                 <th>$fecha</th>
-                <th><a href='./ExamenPsiquicoElemental/views/Tejidos_Actualizar.php?id=$id'><button class='btn-primary btn'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosTej.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
+                <th><a href='./ExamenPsiquicoElemental/views/Tejidos_Actualizar.php?id=$id'><button class='btn' id='btn1'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosTej.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
                 </tr>");
         }
         ?>
@@ -94,7 +97,7 @@
 </h3>
 <div class="container">
     <table class="table table-striped table-black">
-    <thead>
+    <thead id="tablas">
         <tr>
             <th scope="col">Nombre Paciente</th>
             <th scope="col">Periapical</th>
@@ -127,7 +130,7 @@
                 <th>$oclusal</th>
                 <th>$otros</th>
                 <th>$fecha</th>
-                <th><a href='./ExamenPsiquicoElemental/views/Radiograficos_Actualizar.php?id=$id'><button class='btn-primary btn'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosTej.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
+                <th><a href='./ExamenPsiquicoElemental/views/Radiograficos_Actualizar.php?id=$id'><button class='btn' id='btn1'>Editar</button></a><span class='p-2'><a href='./ExamenPsiquicoElemental/Methods/eliminarDatosTej.php?id=$id'><button class='btn btn-danger'>Eliminar</button<</a></span></th>
                 </tr>");
         }
         ?>

@@ -56,7 +56,7 @@ $conn->close();
                     <label>
                         Asignado a: <?php echo $nombre_completo; ?>
                     </label>
-                    <input type="hidden" value="<?php echo $idusuario;?>" name="practicante_id">
+                    <input type="hidden" value="3" name="practicante_id">
                 </div>
                 
                  <h3 class="title">ANAMNESIS REMOTA</h3>

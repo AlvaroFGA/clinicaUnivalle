@@ -21,17 +21,19 @@
         
     </style>
     <link rel='stylesheet' href='style.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='../../css/styleBotones.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='../../css/styleTablas.css' type='text/css' media='all'>
 
     </head>
 <body>
     <div class='container-fluid'>
     <h2>Lista de Usuarios</h2>
-    <button class='submit' ><a href='registrPersona.html'>Crear</a></button>
+    <button class='submit' id="btn1"><a href='registrPersona.html'>Crear</a></button>
     <span></span>
-    <button class='submit' ><a href='../../index.html'>Volver</a></button>
+    <button class='submit' id="btn1"><a href='../../index.html'>Volver</a></button>
     
-    <table class = 'striped'>
-        <thead>
+    <table class="table table-striped table-black" >
+        <thead id="tablas">
             <tr>
                 <th>ID</th>
                 <th>CI</th>

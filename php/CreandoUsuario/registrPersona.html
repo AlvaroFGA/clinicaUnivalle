@@ -6,11 +6,13 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="styleRegPerso.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../css/styleForm.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../css/styleBotones.css" type="text/css" media="all">
 </head>
 <body>
-    <div class="login-box">
+    <div class="login-box" id="form1">
         <p>Registro Persona</p>
-        <form class="form" method="post" action="envioRegistrPerson.php">
+        <form class="form" method="post" action="envioRegistrPerson.php" >
           <div class="user-box">
             <input required="" name="CI" type="text">
             <label>Carnet C.I.</label>
@@ -46,7 +48,7 @@
             <label>Paciente</label> <input required="" name="rol" value="paciente" type="radio">
           </div>
         
-          <button type="submit"  name="Enviar">
+          <button type="submit"  name="Enviar" id="btn1">
             Enviar
           </button> 
         </form>
