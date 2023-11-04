@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include '../modelo/conexion.php';
+    include '../../modelo/conexion.php';
     $concepto = $_POST["concepto"];
     $debe = $_POST["debe"];
     $haber = $_POST["haber"];
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO recibos (fecha, concepto, debe, haber, saldo, ematerial, idplantrat) VALUES (current_date(), '$concepto', '$debe', '$haber', '$saldo', '$eMaterial', '$idRecibo')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: tratamientoPresupuesto.php");
+        header("Location: tratamientoPresupuesto.php?id=$idRecibo");
         exit();
     } else {
         echo "Error al insertar el recibo: " . $conn->error;
