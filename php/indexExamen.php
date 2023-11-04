@@ -9,7 +9,8 @@
 <body>
     <div class="container">
     <h1 class="text-center">Examen Psiquico Elemental</h1>
-    <a href="ExamenPsi.php" class="center"><button class="btn btn-primary">Crear Examen</button></a>
+    <a href="./ExamenPsiquicoElemental/views/ExamenPsiquicoElemental.php" class="center"><button class="btn btn-primary">Crear Examen</button></a>
+    <button><a>Busqueda Examen Psiquico</a>></button>
     <table class="table table-striped table-secondary">
     <thead>
         <tr>

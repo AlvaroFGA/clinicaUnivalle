@@ -14,6 +14,12 @@ $Oclusal = isset($_POST["Oclusal"]) ? "S" :null;
 $panoramica = isset($_POST["panoramica"]) ? "S" :null;
 $valor_opcion = isset($_POST["Rad"]);
 $paciente_id = $_POST['id_paciente'];
+//variables para plan de tratamientos
+if (isset($_POST['trata'])) {
+    $tratamiento = $_POST['trata'];
+}
+$descripcion = $_POST['descripcion'];
+
 
 //si esta tickeado el checkbox de de otros
 if($valor_opcion == 1){
@@ -53,7 +59,8 @@ if($conexion){
     $ex_psi = $conexion -> query("INSERT INTO ex_psiquico VALUES(DEFAULT,'$paciente_id','$conciencia','$percepcion','$memoria','$altCon', '$fecha_selec');");
     $ex_radio = $conexion -> query("INSERT INTO ex_co_radiograficos values(DEFAULT, '$paciente_id', '$periapical', '$mordida', '$Oclusal','$panoramica', '$text','$fecha_selec');");
     $ex_tej = $conexion -> query("INSERT INTO ex_co_tejidos values(DEFAULT, '$paciente_id', '$biopsia', '$citaexfoliatica', '$otras_opciones', '$fecha_selec');");
-    header('Location: ../views/indexExamen.php');
+    $plan_t =  $conexion -> query("INSERT INTO plan_tratamientos values(DEFAULT, '$tratamiento','$descripcion','$fecha_selec', $paciente_id)" );
+    header('Location: ../../indexExamen.php');
     die();
 }else{
     die("error de conexion");

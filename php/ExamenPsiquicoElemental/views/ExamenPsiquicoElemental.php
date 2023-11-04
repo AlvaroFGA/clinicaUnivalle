@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario2</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../../style.css" type="text/css" media="all">
     &nbsp;
 </head>
 <body>
@@ -50,7 +50,7 @@
                 <select>
                     <option value='0'>Elija una opcion</option>
                     <?php
-                    include "../conexion/conn.php";
+                    include "../../conn.php";
                     $query = $conexion -> query("CALL usuarios_id()");
                     while ($row = mysqli_fetch_array($query)) {
                         $id = $row["idusuario"];
@@ -60,16 +60,20 @@
                     }
                     ?>
                 </select>
-                    <p> PLAN DE TRATAMIENTO</p>
-                    <label><span><input type="checkbox" name="Emergencia"></span>Emergencia</label>
-                    <label><span><input type="checkbox" name="OpEndodoncia"></span>Operacion y Endodoncia</label>
-                    <label><span><input type="checkbox" name="Preventiva"></span>Preventiva</label>
-                    <label><span><input type="checkbox" name="ProtosisFija"></span>Protosis fija</label>
-                    <label><span><input type="checkbox" name="Ortodoncia"></span>Ortodoncia</label>
-                    <label><span><input type="checkbox" name="Odontopediatria"></span>Odontopediatria</label>
-                    <label><span><input type="checkbox" name="ProtesisRemovible"></span>Protesis removible</label>
-                    <label><span><input type="checkbox" name="Cirugia"></span>Cirugia</label>
-                <br><br><br><br>
+                    <p for="trata"> PLAN DE TRATAMIENTO</p>
+                    <select name="trata" id="trata">
+                    <?php 
+                        include("../../conn.php");
+                        $query = $conexion -> query("call listar_tratamientos()");
+                        while ($row = mysqli_fetch_array($query)){
+                            $id = $row['idtratamientos'];
+                            $nombreT = $row['nombre'];
+                            echo("<option value='$id'>$nombreT</option>");
+                        }
+                    ?>
+                    </select>
+                    <input type="text" name="descripcion" placeholder="ingrese una descripcion">
+                <br><br>
                     <p>Paciente</p><span>
                 <div class="flex">
                     <?php
