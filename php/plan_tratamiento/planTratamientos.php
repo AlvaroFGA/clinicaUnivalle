@@ -18,11 +18,18 @@ $validar = 'juan';
 <br>
 <div class="container is-fluid">
 <div class="col-xs-12">
-  		<h1>Bienvenido Administrador <?php echo 'juan'; ?></h1>
+  		<h1>Bienvenido  <?php echo 'juan'; ?></h1>
       <br>
-		<h1>Lista de usuarios</h1>
-    <br>
-		<div>
+		<h1>Lista de tratamientos en curso</h1>
+    <br><a href="insertarPlan.php"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#create">
+				<span class="glyphicon glyphicon-plus"></span> Nuevo Plan de Tratamiento   <i class="fa fa-plus"></i>
+      </button></a>
+
+
+</div>
+
+
+
     <div class="container-fluid">
   
   <?php

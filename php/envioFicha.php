@@ -4,7 +4,7 @@ include("conn.php");
 if($conexion){
 
     $id_TP=trim($_POST["id_Ptratamiento"]);
-    $usuarios=3;
+    $usuarios=7;
     $fecha=trim($_POST["Fecha"]);
     $area=trim($_POST["Area"]);
     $diagnostico=trim($_POST["Diagnostico"]);
