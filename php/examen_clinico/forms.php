@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario1</title>
-    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../style.css" type="text/css" media="all">
 
     <style>
     
@@ -12,9 +12,49 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" method="post">
+        <form class="form" method="post" action="./insertar.php">
+        <div class="container">
+        <p class="title">PACIENTE</p>
+        <div class="flex">
+            <label for="id_paciente">
+                Nombre del paciente
+            </label>
+            <select id="id_paciente" name="id_paciente">
+            <?php
+            require('../conn.php');
+            $sql = "SELECT idpacientes, p.nombres, p.apellidos FROM pacientes JOIN personas p WHERE (ci = personas_ci);";
+
+            $result = mysqli_query($conexion, $sql);
+            
+            // Verificar si la consulta se ejecutó correctamente
+            if (!$result) {
+                die("Error de consulta: " . mysqli_error($conn));
+            }
+
+            if (mysqli_num_rows($result) > 0) {
+                echo "<option value='" . "null" . "'>" . " "."</option>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . $row["idpacientes"] . "'>" . $row["nombres"] ." ".$row["apellidos"]."</option>";
+                }
+            } else {
+                echo "No se encontraron resultados.";
+            }
+            ?>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+    <label>
+                Motivo Consulta
+            </label>
+            <input required="" placeholder="" type="text" class="input" name="motivo_consulta">
+            <label>
+                Enfermedad Actual
+            </label>
+            <input required="" placeholder="" type="text" class="input" name="enfermedad_actual">
+    </div>
             <p class="title">EXAMEN CLINICO</p>
-            <div class="flex">
+            <!-- <div class="flex">
                 <label>
                     Estado de salud:
                 </label>
@@ -44,41 +84,59 @@
                 </label>
                 <input required="" placeholder="" type="number" class="input"> 
             </div>
-
+            -->
+            <!--
             <label>
                 Habito postural:
             </label>
             <input required="" placeholder="" type="text" class="input"> 
+            -->
             <label>
                 Examen de craneo:
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <div class="flex">
+                <label>
+                    Tipo:
+                </label>
+                <input required="" placeholder="" type="text" class="input" name="tipo"> 
+        
+                <label>
+                    Tamaño:
+                </label>
+                <input required="" placeholder="" type="text" class="input" name="tamano"> 
+
+                <label>
+                    Forma:
+                </label>
+                <input required="" placeholder="" type="text" class="input" name="forma">
+
+            </div>
             <label>
-                Examen de craneoExamen fe:
+                Examen Facial:
             </label>
 
             <div class="flex">
                 <label>
                     Tipo Facial:
                 </label>
-                <input required="" placeholder="" type="text" class="input"> 
+                <input required="" placeholder="" type="text" class="input" name="tipo"> 
         
                 <label>
                     Expresion Facial:
                 </label>
-                <input required="" placeholder="" type="text" class="input"> 
+                <input required="" placeholder="" type="text" class="input" name="expresion"> 
 
                 <label>
                     Perfil Facil:
                 </label>
-                <input required="" placeholder="" type="text" class="input">
+                <input required="" placeholder="" type="text" class="input" name="perfil">
 
                 <label>
-                    Facias:
+                    Facies:
                 </label>
-                <input required="" placeholder="" type="text" class="input"> 
+                <input required="" placeholder="" type="text" class="input" name="facies"> 
             </div>
-
+            <!--
             <input required="" placeholder="" type="text" class="input">
             <label>
                 Examen de A.T.M.:
@@ -96,36 +154,41 @@
                 Dx:
             </label>
             <input required="" placeholder="" type="text" class="input">
-
+            -->
             <p class="title">EXAMEN ESTOMATOLOGICO</p>
             <label>
                 Labios: (Frenillos)
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="labios">
             <label>
                 Mucosa Yugal:
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="mucosa_yugal">
             <label>
                 Lengua:
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="lengua">
+            <label>
+                Piso boca:
+            </label>
+            <input required="" placeholder="" type="text" class="input" name="piso_boca">
             <label>
                 Paladar:
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="paladar">
             <label>
                 Amigdalas: 
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="amigdalas">
             <label>
                 Encias:
             </label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" type="text" class="input" name="encias">
             <label>
                 Rebordes Alveolares:
             </label>
-            
+            <input required="" placeholder="" type="text" class="input" name="rebordes_alveolares">
+            <!--
             <p class="title">HIGIENE BUCAL</p>
 
             <div class="flex">
@@ -151,7 +214,7 @@
                  Ausente <input required="" placeholder="" type="checkbox">
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <label>
-                    <b>Placa Materia Alba</b> 
+                    <b>Materia Alba</b> 
                  </label>
                  Presente <input required="" placeholder="" type="checkbox"> 
                  Ausente <input required="" placeholder="" type="checkbox">
@@ -165,19 +228,8 @@
             </div>
             
             </br>
-            <div class="flex">
-                <label>
-                    <b>EVALUACION DE LA HIGIENE BUCAL</b> 
-                    &nbsp;&nbsp;&nbsp;
-                 </label>
-                 Mala<input required="" placeholder="" type="radio" class="input" name="hig">
-                 Regular<input required="" placeholder="" type="radio" class="input" name="hig">
-                 Buena<input required="" placeholder="" type="radio" class="input" name="hig">
-            </div>
             </br>
-            <label>
-                    EVALUACION DE LA OCLUSION
-            </label>
+            <p class="title">EVALUACION DE LA OCLUSION</p>
             </br>
             <label>
                 <b>DERECHA</b> 
@@ -218,7 +270,7 @@
                 <label>
                     LINEA MEDIA DENTRARIA 
                 </label>&nbsp;&nbsp;&nbsp;
-                Coincidente
+                <input required="" placeholder="" type="text" class="input">
             </div>
             <div class="flex">
                 <label>
@@ -277,7 +329,7 @@
                 <label>
                     LINEA MEDIA DENTRARIA 
                 </label>&nbsp;&nbsp;&nbsp;
-                Coincidente
+                <input required="" placeholder="" type="text" class="input">
             </div>
             <div class="flex">
                 <label>
@@ -329,7 +381,7 @@
                  Mixta<input required="" placeholder="" type="radio" class="input" name="dete">
                  Permanente<input required="" placeholder="" type="radio" class="input" name="dete">
             </div>
-          
+        -->
 
             
             <button class="submit" name="Enviar">ENVIAR</button>
