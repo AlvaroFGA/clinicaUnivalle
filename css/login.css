@@ -8,8 +8,8 @@
 }
 
 body{
-    background-color: #996b7d;
-    background: linear-gradient(to right, #a87086,  #b56585);
+    background-color: #81436f93;
+    background: linear-gradient(to right, #81436f,  #81436f);
     display: flex;
     align-items: center;
     justify-content: center;
