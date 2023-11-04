@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styleRegPerso.css" type="text/css" media="all">
+</head>
+<body>
+    <div class="login-box">
+        <p>Registro Persona</p>
+        <form class="form" method="post" action="envioRegistrPerson.php">
+          <div class="user-box">
+            <input required="" name="CI" type="text">
+            <label>Carnet C.I.</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Nombres" type="text">
+            <label>Nombres</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Apellidos" type="text">
+            <label>Apellidos</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Direccion" type="text">
+            <label>Direccion</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Telefono" type="text">
+            <label>Telefono</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Fecha" type="datetime-local">
+            <label>Fecha Nacimiento</label>
+          </div>
+          <div class="user-box">
+            <input required="" name="Procedencia" type="text">
+            <label>Procedencia</label>
+          </div>
+          <div class="user-box">
+            <label>Usuario</label> <input required="" name="rol" value="usuario" type="radio">
+          </div>
+          <div class="user-box">
+            <label>Paciente</label> <input required="" name="rol" value="paciente" type="radio">
+          </div>
+        
+          <button type="submit"  name="Enviar">
+            Enviar
+          </button> 
+        </form>
+        <p>Ya tienes cuenta? <a href="log.html" class="a2">Logearse</a></p>
+
+        
+        
+      </div>
+</body>
+</html>
