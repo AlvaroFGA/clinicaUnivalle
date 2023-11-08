@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eMaterial = $_POST["ematerial"];
     $idRecibo = $_POST["idRecibo"];
 
-    $consulta = "SELECT saldo FROM recibos WHERE idplantrat = $idRecibo order by fecha desc limit 1;";
+    $consulta = "SELECT saldo FROM recibos WHERE idplantrat = $idRecibo order by idrecibos desc limit 1;";
 
     $resultado = $conn->query($consulta);
 

@@ -9,9 +9,8 @@
     <title>Inicio de Sesion: Clinica Univalle</title>
 </head>
 <?php
-    $status = $_GET['status'];
-
-    if ($status) {
+$status = isset($_GET['status']) ? $_GET['status'] : null;
+    if ($status=='false') {
         ?>
     <div class="alert alert-warning">
     <strong>Advertencia:</strong> las credenciales que introdujo no son correctas
