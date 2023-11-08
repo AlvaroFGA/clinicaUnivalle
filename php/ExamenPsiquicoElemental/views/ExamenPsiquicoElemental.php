@@ -86,6 +86,7 @@
                             echo("<input type='text' value='$nombre' readonly>");
                             echo("<input type='text' value='$Apellido' readonly>");
                             echo("<input type='hidden' name='id_paciente' value='$id'>");
+                            break;
                         }
                     ?>
                     </span>

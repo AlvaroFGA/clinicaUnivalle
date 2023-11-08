@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="../../css/login.css">
     <title>Inicio de Sesion: Clinica Univalle</title>
 </head>
+<?php
+    $status = $_GET['status'];
 
+    if ($status) {
+        ?>
+    <div class="alert alert-warning">
+    <strong>Advertencia:</strong> las credenciales que introdujo no son correctas
+    </div>    
+<?php    
+} 
+?>
 <body>
 
     <div class="container" id="container">

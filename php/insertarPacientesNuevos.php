@@ -136,12 +136,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Error al llamar al procedimiento almacenado: " . $conn->error;
             }
         }
+        header('Location: ../index.html');
+                exit();
     } else {
         // El array 'habitosCostumbres' está vacío o no se ha enviado.
-        echo "No se han seleccionado hábitos o costumbres.";
-    }
-    
-
+        header('Location: ../index.html');
+        exit();    }
+        
     $conn->close();
 }
 else{

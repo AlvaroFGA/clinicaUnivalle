@@ -68,10 +68,6 @@
         <input name="haber" type="number" class="form-control" id="">
     </div>
     <div class="mb-2">
-        <label for="exampleInputPassword1" class="form-label">Saldo</label>
-        <input name="saldo" type="number" class="form-control" id="">
-    </div>
-    <div class="mb-2">
         <label for="exampleInputPassword1" class="form-label">E. Material</label>
         <input name="ematerial" type="text" class="form-control" id="">
     </div>

@@ -119,7 +119,7 @@ Ficha Clinica</a>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 <script src="../js/user.js"></script>
 <script src="../js/acciones.js"></script>
-<script src="../js/buscador.js"></script>
+<script src="../../js/buscador.js"></script>
 
 
 
