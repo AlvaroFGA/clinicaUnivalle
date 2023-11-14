@@ -1,14 +1,18 @@
 <?php
 session_start();
 //aqui reeemplazas el 7 por un usuario que exista en tu base de datos
-$_SESSION['usuario'] = '7';
+
+if (!isset($_SESSION['usuario_id'])) {
+  header("Location: login/");
+  exit();
+}
 
 include '../modelo/conexion.php';
 if ($conn->connect_error) {
     die("Error de conexión a la base de datos: " . $conexion->connect_error);
 }
 
-$idusuario = $_SESSION['usuario'];
+$idusuario = $_SESSION['usuario_id'];
 $resultado = $conn->query("CALL ObtenerNombreCompleto($idusuario)");
 
 if (!$resultado) {

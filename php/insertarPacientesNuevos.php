@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login/");
+    exit();
+  }
 include '../modelo/conexion.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recopila los datos del formulario en variables

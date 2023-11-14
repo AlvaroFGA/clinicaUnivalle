@@ -1,7 +1,17 @@
 <?php
+$timeout = 5; // 30 minutos
+session_set_cookie_params($timeout);+ 
 session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+  header("Location: login.php");
+  exit();
+}
+
+
+
 error_reporting(0);
-$validar = 'juan';
+$validar = $_SESSION['usuario_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -69,7 +69,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : null;
         </div>
     </div>
 
-    <script src="js/login.js"></script>
+    <script src="../../js/login.js
 </body>
 
 </html>
